@@ -11,26 +11,26 @@ RestManager(string Url)
   - Url - The root URL that will be used for all requests
 
 ```csharp
-Get(string endPoint, IEnumerable<KeyValuePair<string, string>> args = null)
+restManager.Get(string endPoint, IEnumerable<KeyValuePair<string, string>> args = null)
 ```
   - endPoint - The HTTP endpoint to consume. Do not include parameters or query string, use args for this.
   - args (optional) - A collections of parameters to be added to the request
 
 ```csharp
-Post(string endPoint, object obj, IEnumerable<KeyValuePair<string, string>> args = null)
+restManager.Post(string endPoint, object obj, IEnumerable<KeyValuePair<string, string>> args = null)
 ```
   - endPoint - The HTTP endpoint to consume. Do not include parameters or query string, use args for this.
   - obj - The Object that will be transformed into JSON and included as the body of the POST request. If passing JSON as the object, convert to string.
   - args (optional) - A collections of parameters to be added to the request
 
 ```csharp
-DeleteFromBody(string endPoint, object obj)
+restManager.DeleteFromBody(string endPoint, object obj)
 ```
   - endPoint - The HTTP endpoint to consume
   - obj - The object that will be transformed into JSON and included as the body in the DELETE request.
   
 ```csharp
-DeleteFromParam(string endPoint, KeyValuePair<string, string> arg)
+restManager.DeleteFromParam(string endPoint, KeyValuePair<string, string> arg)
 ```
   - endPoint - The HTTP endpoint to consume. Do not include parameters or query string, use args for this.
   - arg - The item to delete using the query string
@@ -48,12 +48,12 @@ JsonManager(JObject json)
   - json - The JSON Object that will be used for all requests
 
 ```csharp
-KeyContains(string key)
+jsonManager.KeyContains(string key)
 ```
   - key - The part of the key that will be checked across all keys at this level of the object to see if they contain this key to allow for partial matches.
 
 ```csharp
-ValueContains(string value)
+jsonManager.ValueContains(string value)
 ```
   - value - The part of the value that will be checked across all values at this level of the object to see if they contain this value to allow for partial matches.
 
